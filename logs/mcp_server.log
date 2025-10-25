@@ -1,0 +1,146 @@
+2025-10-12 19:52:22,155 - config - INFO - Selected Embedding Provider: None
+2025-10-12 19:52:22,155 - config - INFO - No EMBEDDING_PROVIDER selected or it is set to None. Disabling embedding features.
+2025-10-12 19:52:22,156 - config - INFO - Read-only mode: False
+2025-10-12 19:52:22,156 - config - INFO - Logging to console and to file: logs/mcp_server.log (Level: INFO, MaxSize: 10485760B, Backups: 5)
+2025-10-12 19:52:25,083 - config - INFO - Successfully imported google.genai
+2025-10-12 19:52:25,091 - config - INFO - Initializing MariaDB_Server...
+2025-10-12 19:52:25,101 - config - INFO - Creating connection pool for erpnext@localhost:3307 (max size: 10)
+2025-10-12 19:52:29,177 - config - ERROR - Failed to initialize database connection pool: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 1225] The remote computer refused the network connection)")
+Traceback (most recent call last):
+  File "asyncmy\\connection.pyx", line 567, in asyncmy.connection.Connection.connect
+  File "asyncmy\\connection.pyx", line 558, in asyncmy.connection.Connection.connect
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1090, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1069, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 973, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 846, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 633, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] The remote computer refused the network connection
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\src\server.py", line 94, in initialize_pool
+    self.pool = await asyncmy.create_pool(**pool_params)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncmy\\pool.pyx", line 216, in _create_pool
+  File "asyncmy\\pool.pyx", line 217, in asyncmy.pool._create_pool
+  File "asyncmy\\pool.pyx", line 145, in fill_free_pool
+  File "asyncmy\\connection.pyx", line 1345, in _connect
+  File "asyncmy\\connection.pyx", line 590, in connect
+asyncmy.errors.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 1225] The remote computer refused the network connection)")
+2025-10-12 19:52:29,238 - config - CRITICAL - Server setup failed: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 1225] The remote computer refused the network connection)")
+Traceback (most recent call last):
+  File "asyncmy\\connection.pyx", line 567, in asyncmy.connection.Connection.connect
+  File "asyncmy\\connection.pyx", line 558, in asyncmy.connection.Connection.connect
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1090, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1069, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 973, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 846, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 633, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] The remote computer refused the network connection
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\src\server.py", line 800, in run_async_server
+    await self.initialize_pool()
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\src\server.py", line 94, in initialize_pool
+    self.pool = await asyncmy.create_pool(**pool_params)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncmy\\pool.pyx", line 216, in _create_pool
+  File "asyncmy\\pool.pyx", line 217, in asyncmy.pool._create_pool
+  File "asyncmy\\pool.pyx", line 145, in fill_free_pool
+  File "asyncmy\\connection.pyx", line 1345, in _connect
+  File "asyncmy\\connection.pyx", line 590, in connect
+asyncmy.errors.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 1225] The remote computer refused the network connection)")
+2025-10-12 19:52:29,241 - config - CRITICAL - Server failed to start or crashed: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 1225] The remote computer refused the network connection)")
+Traceback (most recent call last):
+  File "asyncmy\\connection.pyx", line 567, in asyncmy.connection.Connection.connect
+  File "asyncmy\\connection.pyx", line 558, in asyncmy.connection.Connection.connect
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1090, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1069, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 973, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 846, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 633, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] The remote computer refused the network connection
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\src\server.py", line 846, in <module>
+    anyio.run(
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 74, in run
+    return async_backend.run(func, args, {}, backend_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2316, in run
+    return runner.run(wrapper())
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2304, in wrapper
+    return await func(*args)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\src\server.py", line 800, in run_async_server
+    await self.initialize_pool()
+  File "C:\Users\vijay\OneDrive\Desktop\mcp-servers\mcp\src\server.py", line 94, in initialize_pool
+    self.pool = await asyncmy.create_pool(**pool_params)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncmy\\pool.pyx", line 216, in _create_pool
+  File "asyncmy\\pool.pyx", line 217, in asyncmy.pool._create_pool
+  File "asyncmy\\pool.pyx", line 145, in fill_free_pool
+  File "asyncmy\\connection.pyx", line 1345, in _connect
+  File "asyncmy\\connection.pyx", line 590, in connect
+asyncmy.errors.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 1225] The remote computer refused the network connection)")
+2025-10-12 19:52:29,280 - config - INFO - Server exiting with code 1.
