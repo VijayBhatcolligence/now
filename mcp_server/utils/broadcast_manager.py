@@ -43,7 +43,7 @@ def get_current_project_data() -> dict:
     """Get the current project data"""
     return _current_project_data
 
-async def handle_frontend_connection(websocket, path):
+async def handle_frontend_connection(websocket, path=None):
     """Handle WebSocket connections from React frontend"""
     from utils.file_manager import read_project_files, REGISTRY_FILE
     from datetime import datetime
