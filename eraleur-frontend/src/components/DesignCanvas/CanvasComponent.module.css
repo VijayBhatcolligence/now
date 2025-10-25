@@ -1,0 +1,20 @@
+/* Canvas Component Container */
+.canvasComponent {
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.canvasComponent.selected {
+  box-shadow: 0 0 0 2px #667eea;
+  z-index: 5;
+}
+
+.canvasComponent:hover:not(.selected) {
+  box-shadow: 0 0 0 1px #aaa;
+}
+
+.canvasComponent.dragging {
+  opacity: 0.8;
+  z-index: 999;
+}

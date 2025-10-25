@@ -1,0 +1,229 @@
+/* Property Panel Container */
+.propertyPanel {
+  width: 320px;
+  background: white;
+  border-left: 1px solid #e9ecef;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.header h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.componentId {
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+  font-family: 'Consolas', monospace;
+}
+
+.deleteButton {
+  padding: 8px 12px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.deleteButton:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.deleteButton:active {
+  transform: scale(0.95);
+}
+
+/* Interaction Button (Phase 3) */
+.interactionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.interactionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.interactionButton:active {
+  transform: translateY(0);
+}
+
+/* Property Groups */
+.group {
+  margin-bottom: 28px;
+}
+
+.group h4 {
+  margin: 0 0 16px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Field Rows */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Individual Fields */
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+.field input[type="text"],
+.field input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.field input[type="text"]:focus,
+.field input[type="number"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.field input[type="color"] {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.field input[type="color"]:hover {
+  border-color: #667eea;
+}
+
+.field input[type="range"] {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e9ecef;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #667eea;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+.field input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #667eea;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  text-align: center;
+  color: #999;
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyState p {
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.emptyHint {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #bbb !important;
+}
+
+/* Scrollbar Styling */
+.propertyPanel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.propertyPanel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.propertyPanel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.propertyPanel::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}

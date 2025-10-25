@@ -1,0 +1,23 @@
+/* Resize Handle */
+.resizeHandle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #667eea;
+  border: 2px solid white;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.resizeHandle:hover {
+  background: #5568d3;
+  transform: scale(1.3);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.resizeHandle:active {
+  background: #4556bc;
+  transform: scale(1.5);
+}

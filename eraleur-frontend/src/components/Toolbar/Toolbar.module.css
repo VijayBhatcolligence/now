@@ -1,0 +1,211 @@
+/* Toolbar Container */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: 60px;
+  z-index: 100;
+}
+
+.leftActions,
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Primary Button (Add Component) */
+.primaryButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.primaryButton:active {
+  transform: translateY(0);
+}
+
+.buttonIcon {
+  font-size: 16px;
+}
+
+/* Tool Buttons */
+.toolButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolButton:hover:not(:disabled) {
+  background: #e9ecef;
+  color: #333;
+  border-color: #ddd;
+}
+
+.toolButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolButton.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Preview Button (Phase 3) */
+.previewButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.previewButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+.previewButton.previewActive {
+  background: #667eea;
+}
+
+.previewButton.previewActive:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Separator */
+.separator {
+  width: 1px;
+  height: 30px;
+  background: #e9ecef;
+}
+
+/* Zoom Controls */
+.zoomControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.zoomDisplay {
+  min-width: 60px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.fitIcon {
+  font-size: 14px;
+}
+
+.gridIcon {
+  font-size: 16px;
+}
+
+/* Save Status */
+.saveStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusDot.saving {
+  background: #ffc107;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.statusDot.saved {
+  background: #28a745;
+}
+
+.statusDot.error {
+  background: #dc3545;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 10px 16px;
+    height: auto;
+  }
+
+  .leftActions,
+  .rightActions {
+    gap: 8px;
+  }
+
+  .primaryButton span:last-child,
+  .toolButton span:last-child {
+    display: none;
+  }
+
+  .zoomDisplay {
+    min-width: 50px;
+    font-size: 12px;
+  }
+
+  .saveStatus span {
+    display: none;
+  }
+}

@@ -1,0 +1,383 @@
+/* Page Selector Container */
+.pageSelector {
+  position: relative;
+  z-index: 100;
+}
+
+/* Current Page Display */
+.currentPage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.currentPage:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.pageIcon {
+  font-size: 18px;
+}
+
+.pageName {
+  font-size: 14px;
+  color: #333;
+}
+
+.pageCount {
+  font-size: 12px;
+  color: #999;
+  margin-left: auto;
+}
+
+.dropdownArrow {
+  font-size: 10px;
+  color: #999;
+  margin-left: 8px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 320px;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: 600;
+  color: #333;
+}
+
+.addPageButton {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addPageButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Pages List */
+.pagesList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.pageItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pageItem:hover {
+  background: #f8f9fa;
+}
+
+.pageItem.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-left: 3px solid #667eea;
+}
+
+.pageInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.componentCount {
+  font-size: 11px;
+  color: #999;
+  margin-left: auto;
+}
+
+.pageActions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pageItem:hover .pageActions {
+  opacity: 1;
+}
+
+.actionButton {
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: #f8f9fa;
+  border-color: #667eea;
+}
+
+.actionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editInput {
+  flex: 1;
+  padding: 6px 8px;
+  border: 2px solid #667eea;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.modalBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Template Grid */
+.templateGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.templateCard {
+  padding: 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.templateCard:hover {
+  border-color: #667eea;
+  background: #f8f9fa;
+}
+
+.templateCard.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.templateIcon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.templateName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.templateDesc {
+  font-size: 11px;
+  color: #999;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e9ecef;
+}
+
+.cancelButton,
+.createButton {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelButton {
+  background: transparent;
+  border: 2px solid #e9ecef;
+  color: #666;
+}
+
+.cancelButton:hover {
+  border-color: #999;
+  background: #f8f9fa;
+}
+
+.createButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+}
+
+.createButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.createButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Scrollbar */
+.pagesList::-webkit-scrollbar,
+.modalBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pagesList::-webkit-scrollbar-track,
+.modalBody::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.pagesList::-webkit-scrollbar-thumb,
+.modalBody::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.pagesList::-webkit-scrollbar-thumb:hover,
+.modalBody::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
